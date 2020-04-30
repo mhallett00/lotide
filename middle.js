@@ -1,12 +1,20 @@
 // ARRAY ASSERTION FUNCTION
-const assertArrayEqual = function(numArray1, numArray2) {
-  for (let i = 0; i < numArray1.length; i++) {
-    if (numArray1[i] !== numArray2[i]) {
-      console.log(`❌️❌️❌️Assertion Failed: ${numArray1} !== ${numArray2}`);
-      return;
+const eqArrays = function(input1, input2) {
+  for (let i = 0; i < input1.length; i++) {
+    if (input1[i] !== input2[i]) {
+      return false;
     }
   }
-  console.log(`✔️ ✔️ ✔️ Assertion Passed: ${numArray1} === ${numArray2}`);
+  return true;
+};
+
+
+const assertArraysEqual = function(actual, expected) {
+  if (eqArrays(actual, expected)) {
+    console.log(`✔️ ✔️ ✔️ Assertion Passed: ${actual} === ${expected}`);
+  } else {
+    console.log(`❌️❌️❌️Assertion Failed: ${actual} !== ${expected}`);
+  }
 };
 
 
@@ -22,6 +30,6 @@ const middle = function(array) {
   
 };
 
-assertArrayEqual(middle([1, 2, 3, 4, 5]),[3]);
-assertArrayEqual(middle([1]),[]);
-assertArrayEqual(middle([1, 2, 3, 4, 5, 6]),[3, 4]);
+assertArraysEqual(middle([1, 2, 3, 4, 5]),[3]);
+assertArraysEqual(middle([1]),[]);
+assertArraysEqual(middle([1, 2, 3, 4, 5, 6]),[3, 4]);

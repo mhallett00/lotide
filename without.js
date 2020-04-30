@@ -1,12 +1,20 @@
 // ARRAY ASSERTION FUNCTION
-const assertArrayEqual = function(numArray1, numArray2) {
-  for (let i = 0; i < numArray1.length; i++) {
-    if (numArray1[i] !== numArray2[i]) {
-      console.log(`❌️❌️❌️Assertion Failed: ${numArray1} !== ${numArray2}`);
-      return;
+const eqArrays = function(input1, input2) {
+  for (let i = 0; i < input1.length; i++) {
+    if (input1[i] !== input2[i]) {
+      return false;
     }
   }
-  console.log(`✔️ ✔️ ✔️ Assertion Passed: ${numArray1} === ${numArray2}`);
+  return true;
+};
+
+
+const assertArraysEqual = function(actual, expected) {
+  if (eqArrays(actual, expected)) {
+    console.log(`✔️ ✔️ ✔️ Assertion Passed: ${actual} === ${expected}`);
+  } else {
+    console.log(`❌️❌️❌️Assertion Failed: ${actual} !== ${expected}`);
+  }
 };
 
 // FUNCTION IMPLMENTATION - To remove elements from source that match itemsToRemove. Returns a new string.
@@ -27,4 +35,4 @@ console.log(without(["1","2","3"], [1, 2, "3"])); // logs ["1", "2"]
 // PASS - If original array is unmodified.
 const words = ["hello", "world", "lighthouse"];
 without(words, ["Lighthouse"]);
-assertArrayEqual(words, ["hello", "world", "lighthouse"]);
+assertArraysEqual(words, ["hello", "world", "lighthouse"]);

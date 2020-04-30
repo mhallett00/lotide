@@ -3,7 +3,7 @@ const words = ["ground", "control", "to", "major", "tom"];
 const map = function(words, func) {
   const results = [];
   for (let item of words) {
-    results.push(func(item))
+    results.push(func(item));
   }
   return results;
 };

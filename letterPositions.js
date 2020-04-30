@@ -1,12 +1,20 @@
 // ARRAY ASSERTION FUNCTION
-const assertArrayEqual = function(numArray1, numArray2) {
-  for (let i = 0; i < numArray1.length; i++) {
-    if (numArray1[i] !== numArray2[i]) {
-      console.log(`❌️❌️❌️Assertion Failed: ${numArray1} !== ${numArray2}`);
-      return;
+const eqArrays = function(input1, input2) {
+  for (let i = 0; i < input1.length; i++) {
+    if (input1[i] !== input2[i]) {
+      return false;
     }
   }
-  console.log(`✔️ ✔️ ✔️ Assertion Passed: ${numArray1} === ${numArray2}`);
+  return true;
+};
+
+
+const assertArraysEqual = function(actual, expected) {
+  if (eqArrays(actual, expected)) {
+    console.log(`✔️ ✔️ ✔️ Assertion Passed: ${actual} === ${expected}`);
+  } else {
+    console.log(`❌️❌️❌️Assertion Failed: ${actual} !== ${expected}`);
+  }
 };
 
 
@@ -27,9 +35,9 @@ const letterPositions = function(sentence) {
 
 // TEST CODE
 
-assertArrayEqual(letterPositions('hello').h, [0]);
-assertArrayEqual(letterPositions('hello').e, [1]);
-assertArrayEqual(letterPositions('hello').l, [2, 3]);
-assertArrayEqual(letterPositions('hello').o, [4]);
+assertArraysEqual(letterPositions('hello').h, [0]);
+assertArraysEqual(letterPositions('hello').e, [1]);
+assertArraysEqual(letterPositions('hello').l, [2, 3]);
+assertArraysEqual(letterPositions('hello').o, [4]);
 
 console.log(letterPositions('hello'));

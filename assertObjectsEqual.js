@@ -1,15 +1,12 @@
 // ASSERTION TEST FUNCTION
 // checks for array equality
-const eqArrays = function(numArray1, numArray2) {
-  let arrEqual;
-  for (let i = 0; i < numArray1.length; i++) {
-    if (numArray1[i] === numArray2[i]) {
-      arrEqual = true;
-    } else {
-      return arrEqual = false;
+const eqArrays = function(input1, input2) {
+  for (let i = 0; i < input1.length; i++) {
+    if (input1[i] !== input2[i]) {
+      return false;
     }
   }
-  return arrEqual;
+  return true;
 };
 
 // checks for object equality
