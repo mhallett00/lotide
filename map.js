@@ -1,6 +1,6 @@
 // ARRAY ASSERTION FUNCTION
 const eqArrays = function(input1, input2) {
-  for (let i = 0; i < input1.length; i++) {
+  for (let i = 0; i <= input1.length; i++) {
     if (input1[i] !== input2[i]) {
       return false;
     }
@@ -38,4 +38,4 @@ const results2= map(words, word => word.length);
 assertArraysEqual(results2, [6, 7, 2, 5, 3]);
 
 const results3 = map (words2, []);
-assertArraysEqual(results3, []);
+assertArraysEqual(results3, ['hi']); // should fail
