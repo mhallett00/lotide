@@ -10,7 +10,6 @@ const assertEqual = function(actual, expected) {
 
 // FUNCTION IMPLEMENTATION
 const findKey = function(input, func) {
-  result = '';
   for (let star in input) {
     if (func(input[star])) {
       return star;
@@ -28,7 +27,7 @@ const constel = findKey({
   "elBulli":   { stars: 3 },
   "Ora":       { stars: 2 },
   "Akelarre":  { stars: 3 }
-}, x => x.stars === 2) // => "noma"
+}, x => x.stars === 2); // => "noma"
 assertEqual(constel, "noma");
 
 const constel2 = findKey({
@@ -38,7 +37,7 @@ const constel2 = findKey({
   "elBulli":   { stars: 3 },
   "Ora":       { stars: 2 },
   "Akelarre":  { stars: 3 }
-}, x => x.stars === 3) // => 'Akaleri'
+}, x => x.stars === 3); // => 'Akaleri'
 assertEqual(constel2, "Akaleri");
 
 const constel3 = findKey({
@@ -48,7 +47,7 @@ const constel3 = findKey({
   "elBulli":   { stars: 3 },
   "Ora":       { stars: 2 },
   "Akelarre":  { stars: 3 }
-}, x => x.stars === 4) // => undefined
+}, x => x.stars === 4); // => undefined
 assertEqual(constel3, undefined);
 
 const constel4 = findKey({
@@ -58,7 +57,7 @@ const constel4 = findKey({
   "elBulli":   { stars: 3 },
   "Ora":       { stars: 2 },
   "Akelarre":  { stars: 3 }
-}, x => x.stars === 0) // => undefined
+}, x => x.stars === 0); // => undefined
 assertEqual(constel4, undefined);
 
 
