@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@mhallett00/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mini clone of the Lodash library. Educational project, not intended for general use",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,9 @@
     "type": "git",
     "url": "git+https://github.com/mhallett00/lotide.git"
   },
-  "author": "",
+  "author": { 
+    "name": "Michael Hallett" 
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mhallett00/lotide/issues"
