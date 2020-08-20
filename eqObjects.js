@@ -1,4 +1,4 @@
-const assertEqual = require("./assertEqual");
+// const assertEqual = require("./assertEqual");
 const eqArrays = require("./eqArrays");
 
 // FUNCTION IMPLMENTATION
@@ -24,29 +24,33 @@ const eqObjects = function (object1, object2) {
   return false;
 };
 
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-assertEqual(eqObjects(ab, ba), true); // => true
+module.exports = eqObjects;
 
-const abc = { a: "1", b: "2", c: "3" };
-assertEqual(eqObjects(ab, abc), false); // => false
+// TEST CODE
 
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-assertEqual(eqObjects(cd, dc), true); // => true
+// const ab = { a: "1", b: "2" };
+// const ba = { b: "2", a: "1" };
+// assertEqual(eqObjects(ab, ba), true); // => true
 
-const cd2 = { c: "1", d: ["2", 3, 4] };
-assertEqual(eqObjects(cd, cd2), false); // => false
+// const abc = { a: "1", b: "2", c: "3" };
+// assertEqual(eqObjects(ab, abc), false); // => false
 
-const dd = { a: [1, 2], b: [3, 4] };
-const cc = { a: [1, 2], b: [3, 4] };
-assertEqual(eqObjects(dd, cc), true); // => true
+// const cd = { c: "1", d: ["2", 3] };
+// const dc = { d: ["2", 3], c: "1" };
+// assertEqual(eqObjects(cd, dc), true); // => true
 
-const ccc = { a: [1, 2], b: [3, 5] };
-assertEqual(eqObjects(dd, ccc), false); // => false
+// const cd2 = { c: "1", d: ["2", 3, 4] };
+// assertEqual(eqObjects(cd, cd2), false); // => false
 
-const ddd = { a: [1, 2], b: 3 };
-assertEqual(eqObjects(dd, ddd), false); // => false
+// const dd = { a: [1, 2], b: [3, 4] };
+// const cc = { a: [1, 2], b: [3, 4] };
+// assertEqual(eqObjects(dd, cc), true); // => true
 
-const dddd = { a: [1, 2], b: 3 };
-assertEqual(eqObjects(dd, dddd), false); // => false
+// const ccc = { a: [1, 2], b: [3, 5] };
+// assertEqual(eqObjects(dd, ccc), false); // => false
+
+// const ddd = { a: [1, 2], b: 3 };
+// assertEqual(eqObjects(dd, ddd), false); // => false
+
+// const dddd = { a: [1, 2], b: 3 };
+// assertEqual(eqObjects(dd, dddd), false); // => false
