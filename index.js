@@ -4,6 +4,7 @@ const eqArrays = require('./eqArrays');
 const head = require('./head');
 const tail = require('./tail');
 const middle = require('./middle');
+const without = require('./without');
 
 module.exports = {
   assertArraysEqual,
@@ -12,4 +13,5 @@ module.exports = {
   head,
   middle,
   tail,
+  without,
 };
